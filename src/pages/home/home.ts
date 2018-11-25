@@ -7,8 +7,25 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  public novoTodo = '';
 
+  public lista = [
+];
+
+  constructor(
+    public navCtrl: NavController
+  ) {
+
+  }
+
+
+  public addTodo(){
+    if(this.novoTodo){
+      this.lista.push({
+        nome: this.novoTodo, checked: false
+      });
+      this.novoTodo = '';
+    }
   }
 
 }
